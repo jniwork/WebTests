@@ -37,11 +37,12 @@ class LoginPageHelper(BasePage):
         self.find_element(LoginPageLocators.MAIL_BUTTON)
         self.find_element(LoginPageLocators.YANDEX_BUTTON)
 
-    @allure.step("Нажимаем на кнопку 'войти'")
+    @allure.step("Нажимаем на кнопку 'Войти'")
     def click_login(self):
         self.attach_screenshot()
         self.find_element(LoginPageLocators.LOGIN_BUTTON).click()
 
+    @allure.step("Вводим 'Логин'")
     def input_login(self, login):
         self.find_element(LoginPageLocators.LOGIN_FIELD).send_keys(login)
 
