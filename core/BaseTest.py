@@ -5,5 +5,5 @@ from selenium import webdriver
 @pytest.fixture(scope="session")
 def browser():
     driver = webdriver.Chrome()
-    yield
+    yield driver
     driver.quit()
