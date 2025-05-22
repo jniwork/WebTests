@@ -9,6 +9,7 @@ EMPTY_LOGIN_ERROR = 'Введите логин'
 EMPTY_PASSWORD_ERROR = 'Введите пароль'
 LOGIN = 'test@test.ru'
 
+
 @allure.suite("Проверка формы авторизации")
 @allure.title("Проверка ошибки при пустой в форме авторизации")
 def test_empty_login_and_password(browser):
@@ -16,6 +17,7 @@ def test_empty_login_and_password(browser):
     LoginPage = LoginPageHelper(browser)
     LoginPage.click_login()
     assert LoginPage.get_error_text() == EMPTY_LOGIN_ERROR
+
 
 @allure.suite("Проверка формы авторизации")
 @allure.title("Проверка ошибки при пустом поле пароля в форме авторизации")
