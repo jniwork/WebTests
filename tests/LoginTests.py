@@ -1,3 +1,4 @@
+import allure
 from core.BaseTest import browser
 from pages.BasePage import BasePage
 from pages.LoginPage import LoginPageHelper
@@ -8,6 +9,8 @@ EMPTY_PASSWORD_ERROR = "Введите пароль"
 LOGIN = "test"
 
 
+@allure.suite("Проверка формы авторизации")
+@allure.title("Проверка ошибки при пустой форме авторизации")
 def test_empty_login_and_password(browser):
     BasePage(browser).get_url(BASE_URL)
     LoginPage = LoginPageHelper(browser)
@@ -16,6 +19,8 @@ def test_empty_login_and_password(browser):
     assert LoginPage.get_missing_login_text() == EMPTY_LOGIN_ERROR
 
 
+@allure.suite("Проверка формы авторизации")
+@allure.title("Проверка ошибки при пустом пароле")
 def test_empty_password(browser):
     BasePage(browser).get_url(BASE_URL)
     LoginPage = LoginPageHelper(browser)
